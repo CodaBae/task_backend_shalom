@@ -3,9 +3,19 @@ const express = require('express')
 const app = express()
 
 const mongoose = require('mongoose')
+
 const bodyParser = require('body-parser')
 
+
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
+
+
 app.use(bodyParser.urlencoded({extended:false}))
+app.use(express.json())
+
 
 
 // file import
@@ -88,6 +98,7 @@ Task.findById(req.params.id,(err, task)=>{
 // Post task
 
 app.post('/task', (req, res) => {
+    console.log(res)
     const newTask = new Task({
         name: req.body.name,
         date: req.body.date,
