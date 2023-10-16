@@ -98,12 +98,13 @@ Task.findById(req.params.id,(err, task)=>{
 // Post task
 
 app.post('/task', (req, res) => {
-    console.log(res)
     const newTask = new Task({
         name: req.body.name,
         date: req.body.date,
         isCompleted: req.body.isCompleted
     })
+
+    console.log(newTask)
 
     newTask.save().then((task) => res.send('task created')).catch((err) => res.send(err))
 
