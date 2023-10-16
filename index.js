@@ -23,7 +23,7 @@ const taskSchema = require('./model/Task')
 
 const Task = mongoose.model("Tasks", taskSchema)
 
-const mongoDBAccess = 'mongodb+srv://shalom:shalom@humdov.com@cluster0.i5xwlr1.mongodb.net/?retryWrites=true&w=majority'
+const mongoDBAccess = 'mongodb+srv://shalom:shalom123@cluster0.i5xwlr1.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.set('strictQuery', false);
 mongoose.connect(mongoDBAccess, { useNewUrlParser: true }).then(() => {
